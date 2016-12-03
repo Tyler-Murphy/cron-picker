@@ -1,0 +1,26 @@
+{
+  "name": "cron_picker",
+  "version": "1.0.0",
+  "description": "An html element for entering cron expressions",
+  "main": "index.js",
+  "scripts": {
+    "start": "budo example.js --live --open",
+    "test": "tape tests/*.js"
+  },
+  "keywords": [
+    "cron",
+    "html",
+    "element",
+    "input"
+  ],
+  "author": "Tyler Murphy <tylermurphyj@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "budo": "^9.2.2",
+    "tape": "^4.6.3"
+  },
+  "dependencies": {
+    "cronstrue": "^0.8.0",
+    "yo-yo": "^1.3.1"
+  }
+}
