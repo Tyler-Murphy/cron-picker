@@ -1,6 +1,7 @@
 const yo = require('yo-yo')
 const cronstrue = require('cronstrue')
 
+const defaultExpression = '35 9 * * 1'
 const noop = () => {}
 const units = [
   'minute',
@@ -13,7 +14,7 @@ let initialElement
 
 module.exports = cronPicker
 
-function cronPicker({ cronExpression, onChange = noop }) {
+function cronPicker({ cronExpression = defaultExpression, onChange = noop } = {}) {
   let cronFields = cronExpression.split(' ')
   let globalReason
 
@@ -73,7 +74,7 @@ function cronField({ unit, string, valid = true, onChange = noop }) {
 }
 
 function invalidReason(field) {
-  if (field.length === 0) {
+  if (!field) {
     return 'fields must not be empty'
   }
 
