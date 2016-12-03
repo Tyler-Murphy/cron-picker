@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "budo example.js --live --open",
-    "test": "tape tests/*.js"
+    "test": "tape test.js"
   },
   "keywords": [
     "cron",
