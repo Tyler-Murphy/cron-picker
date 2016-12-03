@@ -6,4 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     cronExpression: '35 * * * *',
     onChange: console.log
   }))
+  document.body.appendChild(cronPicker({
+    cronExpression: '36 * * * *',
+    onChange: console.log
+  }))
 })

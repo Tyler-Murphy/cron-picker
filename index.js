@@ -10,11 +10,10 @@ const units = [
   'month',
   'day of week',
 ]
-let initialElement
 
 module.exports = cronPicker
 
-function cronPicker({ cronExpression = defaultExpression, onChange = noop } = {}) {
+function cronPicker({ cronExpression = defaultExpression, onChange = noop, toUpdate } = {}) {
   let cronFields = cronExpression.split(' ')
   let globalReason
 
@@ -34,9 +33,10 @@ function cronPicker({ cronExpression = defaultExpression, onChange = noop } = {}
           cronFields[units.indexOf(unit)] = value
           cronExpression = cronFields.join(' ')
           onChange(cronExpression)
-          yo.update(initialElement, cronPicker({
+          yo.update(toUpdate, cronPicker({
             cronExpression,
-            onChange
+            onChange,
+            toUpdate
           }))
         }
       })
@@ -45,7 +45,7 @@ function cronPicker({ cronExpression = defaultExpression, onChange = noop } = {}
   </div>
   `
 
-  initialElement = initialElement || picker
+  toUpdate = toUpdate || picker
   return picker
 }
 
