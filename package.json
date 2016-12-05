@@ -1,11 +1,11 @@
 {
   "name": "cron-picker",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "An html element for entering cron expressions",
   "main": "index.js",
   "scripts": {
     "start": "budo example.js --live --open",
-    "build": "browserify -g yo-yoify -s feedback index.js | buble > dist/index.js",
+    "build": "browserify -g yo-yoify -s cron index.js | buble > dist/index.js",
     "test": "tape test.js",
     "prepublish": "npm run build"
   },
