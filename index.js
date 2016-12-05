@@ -55,18 +55,18 @@ function cronField({ unit, string, valid = true, onChange = noop }) {
   return yo`
   <div>
     <label>
-      <input ${{
-        type: 'text',
-        value: string,
-        oninput: e => onChange({
+      <input
+        type="text",
+        value=${string}
+        oninput=${e => onChange({
           unit,
           value: e.target.value.replace(/\s/g, '')
-        }),
-        style: `
+        })}
+        style=${`
           border: 1px solid ${valid ? 'blue' : 'red'};
           outline: none;
-        `
-      }}/>
+        `}
+      />
       ${unit}
     </label>
   </div>

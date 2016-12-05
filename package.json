@@ -6,7 +6,8 @@
   "scripts": {
     "start": "budo example.js --live --open",
     "build": "browserify -g yo-yoify -s feedback index.js | buble > dist/index.js",
-    "test": "tape test.js"
+    "test": "tape test.js",
+    "prepublish": "npm run build"
   },
   "files": [
     "dist/",
@@ -21,8 +22,11 @@
   "author": "Tyler Murphy <tylermurphyj@gmail.com>",
   "license": "ISC",
   "devDependencies": {
+    "browserify": "^13.1.1",
+    "buble": "^0.14.2",
     "budo": "^9.2.2",
-    "tape": "^4.6.3"
+    "tape": "^4.6.3",
+    "yo-yoify": "^3.5.0"
   },
   "dependencies": {
     "cronstrue": "^0.8.0",
