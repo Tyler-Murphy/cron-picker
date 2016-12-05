@@ -1,6 +1,6 @@
 {
   "name": "cron-picker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An html element for entering cron expressions",
   "main": "index.js",
   "scripts": {
